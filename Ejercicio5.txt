@@ -1,0 +1,70 @@
+package ej05;
+
+import java.util.Scanner;
+
+public class Ej5 {
+
+	public static void main(String[] args) {
+
+		/*Queremos desarrollar una aplicación que nos ayude a gestionar las notas de un centro
+		 educativo. Cada grupo (o clase) está compuesto por 5 alumnos. Se pide leer las notas del primer,
+		 segundo y tercer trimestre de un grupo. Debemos mostrar al final: la nota media del grupo en cada trimestre,
+		 y la media del alumno que se encuentra en la posición N (N se lee por teclado).*/
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int primero[], segundo[], tercero[];
+		int num;
+		int suma_primero, suma_segundo, suma_tercero;
+		double media_alumno;
+
+		
+		primero = new int [5];
+		segundo = new int [5];
+		tercero = new int [5];
+		
+		System.out.println("Notas del primer trimestre:");
+		for (int i=0;i<5;i++){
+		System.out.print("Alumno "+(i+1)+": ");
+		primero[i]=sc.nextInt();
+		}
+		
+		System.out.println("Notas del segundo trimestre:");
+		for (int i=0;i<5;i++){
+		System.out.print("Alumno "+(i+1)+": ");
+		segundo[i]=sc.nextInt();
+		}
+		
+		System.out.println("Notas del tercer trimestre:");
+		for (int i=0;i<5;i++){
+		System.out.print("Alumno "+(i+1)+": ");
+		tercero[i]=sc.nextInt();
+		}
+		
+		suma_primero = 0;
+		suma_segundo = 0;
+		suma_tercero = 0;
+		
+		for (int i =0; i < 5; i++){
+		suma_primero += primero[i];
+		suma_segundo += segundo[i];
+		suma_tercero += tercero[i];
+		}
+		
+		System.out.println("Media primer trimestre: "+ suma_primero/5.0);
+		System.out.println("Media segundo trimestre: "+ suma_segundo/5.0);
+		System.out.println("Media tercer trimestre: "+ suma_tercero/5.0);
+		System.out.println();
+		
+		System.out.print ("Elige el alumno (0-9): ");
+		num=sc.nextInt();
+		
+		media_alumno = (double) (primero[num]+segundo[num]+tercero[num])/3;
+		System.out.println("La media del alumno es: " + media_alumno);
+		}
+		
+}
+
+	
+
+
